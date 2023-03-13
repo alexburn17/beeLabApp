@@ -1,13 +1,15 @@
 import dash
-import dash_table
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash_table
+from dash import dcc
+from dash import html
 import plotly.graph_objs as go
 from dash.dependencies import State, Input, Output
 from dash.exceptions import PreventUpdate
 
 import pandas as pd
 import os
+# here is a change
+
 
 app = dash.Dash(
     __name__,
@@ -329,7 +331,7 @@ def generate_geo_map(geo_data, selected_metric, region_select, procedure_select)
             ),
             pitch=5,
             zoom=5,
-            style="mapbox://styles/plotlymapbox/cjvppq1jl1ips1co3j12b9hex",
+            style="mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
         ),
     )
 
