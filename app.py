@@ -8,7 +8,6 @@ from dash.exceptions import PreventUpdate
 
 import pandas as pd
 import os
-# here is a change
 
 
 app = dash.Dash(
@@ -280,17 +279,17 @@ def generate_geo_map(geo_data, selected_metric, region_select, procedure_select)
                     [0.66, "#ff6969"],
                     [1, "#ff1717"],
                 ],
-                cmin=cost_metric_data["min"],
-                cmax=cost_metric_data["max"],
+                #cmin=cost_metric_data["min"],
+                #cmax=cost_metric_data["max"],
                 size=10
                 * (1 + (val + cost_metric_data["min"]) / cost_metric_data["mid"]),
                 colorbar=dict(
                     x=0.9,
                     len=0.7,
-                    title=dict(
-                        text="Average Cost",
-                        font={"color": "#737a8d", "family": "Open Sans"},
-                    ),
+                    #title=dict(
+                        #text="Average Cost",
+                        #font={"color": "#737a8d", "family": "Open Sans"},
+                    #),
                     titleside="top",
                     tickmode="array",
                     tickvals=[cost_metric_data["min"], cost_metric_data["max"]],
@@ -318,20 +317,20 @@ def generate_geo_map(geo_data, selected_metric, region_select, procedure_select)
 
     layout = go.Layout(
         margin=dict(l=10, r=10, t=20, b=10, pad=5),
-        plot_bgcolor="#171b26",
-        paper_bgcolor="#171b26",
+        plot_bgcolor="#fff",
+        paper_bgcolor="#fff",
         clickmode="event+select",
         hovermode="closest",
         showlegend=False,
         mapbox=go.layout.Mapbox(
             accesstoken=mapbox_access_token,
-            bearing=10,
+            bearing=0,
             center=go.layout.mapbox.Center(
                 lat=filtered_data.lat.mean(), lon=filtered_data.lon.mean()
             ),
-            pitch=5,
-            zoom=5,
-            style="mapbox://styles/plotlymapbox/cjvprkf3t1kns1cqjxuxmwixz"
+            pitch=0,
+            zoom=6,
+            style="carto-darkmatter"
         ),
     )
 
@@ -419,8 +418,8 @@ app.layout = html.Div(
             id="banner",
             className="banner",
             children=[
-                html.H6("Dash Clinical Analytics"),
-                html.Img(src=app.get_asset_url("plotly_logo_white.png")),
+                html.H6("Vermont Bee Lab Pesticide Atlas"),
+                html.Img(src=app.get_asset_url("biglogo.png")),
             ],
         ),
         html.Div(
@@ -434,7 +433,7 @@ app.layout = html.Div(
                     children=[
                         html.P(
                             id="map-title",
-                            children="Medicare Provider Charges in the State of {}".format(
+                            children="Pestacide Testing Sites {}".format(
                                 state_map[state_list[0]]
                             ),
                         ),

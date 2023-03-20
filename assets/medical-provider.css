@@ -10,13 +10,13 @@
 }
 
 body {
-  background-color: #171b26;
+  background-color: #fff;
   color: #9fa6b7;
   overflow-x: hidden;
 }
 
 .banner {
-  height: 5rem;
+  height: 10rem;
   margin-bottom: 1rem;
   padding: 0rem 5rem 0rem;
   display: flex;
@@ -27,7 +27,7 @@ body {
 
 .banner h6 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -35,7 +35,7 @@ body {
 
 .banner Img {
   position: relative;
-  height: 2rem;
+  height: 10rem;
   width: auto;
 }
 
@@ -66,7 +66,7 @@ body {
 }
 
 *.Select-control, Select--single, .Select-multi-value-wrapper, .Select-value, .Select-value-label {
-  background-color: #171b26 !important;
+  background-color: #fff !important;
   color: #7b7d8d !important;
 }
 
@@ -79,7 +79,7 @@ span.Select-clear-zone {
 }
 
 .Select-menu-outer, .Select-menu-outer div, .Select--multi {
-  background-color: #171b26 !important;
+  background-color: #fff !important;
   color: #7b7d8d !important;
 }
 
@@ -96,6 +96,7 @@ span.Select-clear-zone {
 .dash-spreadsheet-container .dash-spreadsheet-inner th, td {
   text-align: center !important;
   font-family: "Open Sans", sans-serif !important;
+  background-color: #fff !important;
   border-top-color: #171b26 !important;
   border-bottom-color: #171b26 !important;
   border-left-color: #171b26 !important;
@@ -151,6 +152,7 @@ span.Select-clear-zone {
 .mapboxgl-canvas,
 .mapboxgl-map {
   min-width: 100%;
+  background-color: #fff !important;
 }
 
 /*
